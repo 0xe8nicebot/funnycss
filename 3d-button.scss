@@ -1,0 +1,301 @@
+/*---------- Variable ----------*/
+:root {
+
+/*---- button settings */
+--button-medium-height: 5.2rem;
+--button-medium-padding: 2rem;
+--button-medium-border-width: 0.15rem;
+--button-medium-radius: 0.8rem;
+--button-medium-flex-gap: 1.2rem;
+--button-medium-icon-size: 2.2rem;
+--button-medium-arrow-size: 1.6rem;
+--button-medium-font-size: 1.6rem;
+--button-medium-font-weight: 500;
+
+--button-normal-height: 4.4rem;
+--button-normal-padding: 1.6rem;
+--button-normal-border-width: 0.15rem;
+--button-normal-radius: 0.8rem;
+--button-normal-flex-gap: 1rem;
+--button-normal-icon-size: 2rem;
+--button-normal-arrow-size: 1.4rem;
+--button-normal-font-size: 1.4rem;
+--button-normal-font-weight: 500;
+
+--button-small-height: 3.6rem;
+--button-small-padding: 1.2rem;
+--button-small-border-width: 0.1rem;
+--button-small-radius: 0.6rem;
+--button-small-flex-gap: 0.8rem;
+--button-small-icon-size: 1.8rem;
+--button-small-arrow-size: 1.2rem;
+--button-small-font-size: 1.3rem;
+--button-small-font-weight: 500;
+
+--button-xsmall-height: 2.8rem;
+--button-xsmall-padding: 0.8rem;
+--button-xsmall-border-width: 0.1rem;
+--button-xsmall-radius: 0.6rem;
+--button-xsmall-flex-gap: 0.6rem;
+--button-xsmall-icon-size: 1.6rem;
+--button-xsmall-arrow-size: 1rem;
+--button-xsmall-font-size: 1.2rem;
+--button-xsmall-font-weight: 500;
+
+--3d-button-medium-shadow-height: 0.5rem;
+--3d-button-normal-shadow-height: 0.4rem;
+--3d-button-small-shadow-height: 0.3rem;
+--3d-button-xsmall-shadow-height: 0.2rem;
+
+}
+
+
+
+/*---------- Button g 3D ----------*/
+@mixin button-3d-size-medium {
+    height: calc(var(--button-medium-height) + var(--3d-button-medium-shadow-height));
+    .ctrl {
+        height: var(--button-medium-height);
+        padding: 0 calc(var(--button-medium-padding) + 0.1em);
+        gap: var(--button-medium-flex-gap);
+        font-size: var(--button-medium-font-size);
+        font-weight: var(--button-medium-font-weight);
+    }
+    &::after {
+        border-radius: calc(var(--button-medium-height) / 2) calc(var(--button-medium-height) / 2) calc(var(--button-medium-height) / 2 + 0.2em) calc(var(--button-medium-height) / 2 + 0.2em);
+    } 
+    &:hover {
+        .ctrl {
+            top: var(--3d-button-medium-shadow-height);
+        }
+        &::after {
+            height: calc(100% - 0.2857em - var(--3d-button-medium-shadow-height));
+        }
+    }
+    // Less Radius Style
+    &.button-less-rounded {
+        .ctrl {
+            border-radius: var(--button-medium-radius);
+            padding: 0 var(--button-medium-padding);
+        }
+        &::after {
+            border-radius: var(--button-medium-radius) var(--button-medium-radius) calc(var(--button-medium-radius) + 0.3em) calc(var(--button-medium-radius) + 0.3em);
+        } 
+    }
+}
+@mixin button-3d-size-normal {
+    height: calc(var(--button-normal-height) + var(--3d-button-normal-shadow-height));
+    .ctrl {
+        height: var(--button-normal-height);
+        padding: 0 calc(var(--button-normal-padding) + 0.1em);
+        gap: var(--button-normal-flex-gap);
+        font-size: var(--button-normal-font-size);
+        font-weight: var(--button-normal-font-weight);
+    }
+    &::after {
+        border-radius: calc(var(--button-normal-height) / 2) calc(var(--button-normal-height) / 2) calc(var(--button-normal-height) / 2 + 0.2em) calc(var(--button-normal-height) / 2 + 0.2em);
+    } 
+    &:hover {
+        .ctrl {
+            top: var(--3d-button-normal-shadow-height);
+        }
+        &::after {
+            height: calc(100% - 0.2857em - var(--3d-button-normal-shadow-height));
+        }
+    }
+    // Less Radius Style
+    &.button-less-rounded {
+        .ctrl {
+            border-radius: var(--button-normal-radius);
+            padding: 0 var(--button-normal-padding);
+        }
+        &::after {
+            border-radius: var(--button-normal-radius) var(--button-normal-radius) calc(var(--button-normal-radius) + 0.3em) calc(var(--button-normal-radius) + 0.3em);
+        } 
+    }
+}
+@mixin button-3d-size-small {
+    height: calc(var(--button-small-height) + var(--3d-button-small-shadow-height));
+    .ctrl {
+        height: var(--button-small-height);
+        padding: 0 calc(var(--button-small-padding) + 0.2em);
+        gap: var(--button-small-flex-gap);
+        font-size: var(--button-small-font-size);
+        font-weight: var(--button-small-font-weight);
+    }
+    &::after {
+        border-radius: calc(var(--button-small-height) / 2) calc(var(--button-small-height) / 2) calc(var(--button-small-height) / 2 + 0.2em) calc(var(--button-small-height) / 2 + 0.2em);
+    } 
+    &:hover {
+        .ctrl {
+            top: var(--3d-button-small-shadow-height);
+        }
+        &::after {
+            height: calc(100% - 0.2857em - var(--3d-button-small-shadow-height));
+        }
+    }
+    // Less Radius Style
+    &.button-less-rounded {
+        .ctrl {
+            border-radius: var(--button-small-radius);
+            padding: 0 var(--button-small-padding);
+        }
+        &::after {
+            border-radius: var(--button-small-radius) var(--button-small-radius) calc(var(--button-small-radius) + 0.3em) calc(var(--button-small-radius) + 0.3em);
+        } 
+    }
+}
+@mixin button-3d-size-xsmall {
+    height: calc(var(--button-xsmall-height) + var(--3d-button-xsmall-shadow-height));
+    .ctrl {
+        height: var(--button-xsmall-height);
+        padding: 0 calc(var(--button-xsmall-padding) + 0.4em);
+        gap: var(--button-xsmall-flex-gap);
+        font-size: var(--button-xsmall-font-size);
+        font-weight: var(--button-xsmall-font-weight);
+    }
+    &::after {
+        border-radius: calc(var(--button-xsmall-height) / 2) calc(var(--button-xsmall-height) / 2) calc(var(--button-xsmall-height) / 2 + 0.2em) calc(var(--button-xsmall-height) / 2 + 0.2em);
+    } 
+    &:hover {
+        .ctrl {
+            top: var(--3d-button-xsmall-shadow-height);
+        }
+        &::after {
+            height: calc(100% - 0.2857em - var(--3d-button-xsmall-shadow-height));
+        }
+    }
+    // Less Radius Style
+    &.button-less-rounded {
+        .ctrl {
+            border-radius: var(--button-xsmall-radius);
+            padding: 0 var(--button-xsmall-padding);
+        }
+        &::after {
+            border-radius: var(--button-xsmall-radius) var(--button-xsmall-radius) calc(var(--button-xsmall-radius) + 0.3em) calc(var(--button-xsmall-radius) + 0.3em);
+        } 
+    }
+}
+
+@mixin comp-3d-button-ux-disabled {
+    @media (hover: none) {
+        &:active {
+            filter: brightness(1.05);
+        }
+     }
+     @media (hover: hover) {
+        &:hover {
+            filter: brightness(1.05);
+        }
+        &:active {
+            filter: brightness(1.1);
+         }
+     }
+}
+
+@mixin button-g-3d($button-size: '') {
+
+    // Default Button Styles
+    position: relative;
+    height: calc(var(--button-normal-height) + var(--3d-button-normal-shadow-height));
+    // Icon Size
+    .icon {
+        width: 1.3em;
+        height: 1.3em;
+    }
+    // ---- Front Parts
+    .ctrl {
+        color: var(--black100);
+        text-decoration: none;
+        white-space: nowrap;
+        background: var(--white100);
+        display: inline-flex;
+        align-items: center;
+        outline: {
+            width: 2px;
+            style: solid;
+            color: var(--black100);
+            offset: -2px;
+        }
+        border-radius: var(--radiusx);
+        position: relative;
+        top: 0;
+        z-index: 10;
+    }
+    // ---- Back Parts
+    &::after {
+        content: '';
+        background: var(--black100);
+        border-radius: calc(var(--button-normal-height) / 2) calc(var(--button-normal-height) / 2) calc(var(--button-normal-height) / 2 + 0.2em) calc(var(--button-normal-height) / 2 + 0.2em);
+        height: calc(100% - 0.2857em);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    } 
+    // UX
+    &:hover {
+        cursor: pointer;
+        .ctrl {
+            top: var(--3d-button-normal-shadow-height);
+        }
+        &::after {
+            height: calc(100% - 0.2857em - var(--3d-button-normal-shadow-height));
+        }
+    }
+    // Transition
+    &, &::after, .ctrl {
+        transition: var(--transition-button-type-3d);  
+    }
+
+    // Button Size ( medium / normal / small / xsmall )
+    // Default：normal
+    @if $button-size == medium {
+        @include button-3d-size-medium;
+	} @else {
+		&.button-medium {
+            @include button-3d-size-medium;
+		}
+	}
+	@if $button-size == normal {
+        @include button-3d-size-normal;
+	} @else {
+		&.button-normal {
+            @include button-3d-size-normal;
+		}
+	}
+    @if $button-size == small {
+        @include button-3d-size-small;
+	} @else {
+		&.button-small {
+            @include button-3d-size-small;
+		}
+	}
+    @if $button-size == xsmall {
+        @include button-3d-size-xsmall;
+	} @else {
+		&.button-xsmall {
+            @include button-3d-size-xsmall;
+		}
+	}
+
+    // For Loading & Disabled Style
+    &.button-disabled,
+    &.button-loading {
+        opacity: 0.6 !important;
+        pointer-events: none !important;
+        .ctrl {
+            background: var(--black10) !important;
+        }
+    }
+    &.button-loading {
+        .icon.icon-Loading-Circle {
+            @include animation-spin;
+        }
+    }
+}
+.button-g-3d {
+    @include button-g-3d();
+}
+
